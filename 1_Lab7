@@ -10,3 +10,14 @@ int main(void) {
      functionM();
 a = functionM();
 }
+//a)  functionM(); ไม่มีข้อผิดพลาด
+//b)  a = functionM(); มีข้อผิดพลาด functionM() ส่งค่ากลับเป็น double แต่ตัวแปร a ใช้ int
+//c)  b = functionN(a, b); ถูกต้อง ผลลัพธ์ของฟังก์ชัน functionN(a, b) ตัววแปร b ถูกแปลงจาก int ไปเป็น double ในพารามิเตอร์ของฟังก์ชัน functionN
+//d)  r = functionO(r,a,s,b); ไม่มีข้อผิดพลาด การใช้พารามิเตอร์ประเภทที่ตรงกัน คือ r และ s เป็น double และ a และ b เป็น int
+//e)  s = functionP(a,b,c,d,e); มีข้อผิดพลาด functionP() รับพารามิเตอร์แค่ 4 แต่ส่งไป 5
+//f)  u = functionM(); ไม่มีข้อผิดพลาด u รับค่าผลลัพธ์จาก functionM() ที่เป็น double ได้
+//g)  c = d + functionN(r,s); ผิด เพราะ d ยังไม่ได้รับค่า
+//h)  t = s * functionO(r, a, r, a); ไม่มีข้อผิดพลาด 
+//i)  a = v + functionP(r, s, t, t); มีข้อผิดพลาาด เพราะ functionP รับพารามิเตอร์เป็น int
+//j)  functionP(functionN(a, a), s, t, t+r); มีข้อผิดพลาด เพราะ s, t, และ t + r ต้องแปลงเป็น int ก่อนจะส่งไปให้ functionP
+//k)  v = functionP(functionN(a, a), s, t, t+r); มีข้อผิดพลาด เพราะs, t, และ t + r ต้องแปลงเป็น int ก่อนส่งไปให้ functionP
